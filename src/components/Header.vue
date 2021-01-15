@@ -9,19 +9,4 @@
   </header>
 </template>
 
-<style scoped>
-header {
-  background: #ffeb3b;
-  display: flex;
-  height: 160px;
-  width: 500px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  font-family: "Rock Salt", cursive;
-}
-
-header h1 {
-  font-size: 72px;
-}
-</style>
+<style scoped src="../styles/Header.css"></style>

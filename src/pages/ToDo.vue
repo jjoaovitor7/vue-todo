@@ -1,24 +1,26 @@
 <template>
-  <div id="page-home">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+    rel="stylesheet"
+  />
+
+  <section id="page-home" ref="pageHome">
     <Header />
     <TextArea />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
-      rel="stylesheet"
-    />
 
-    <button @click="addTask" id="btn-ok">Ok</button>
-    <Task task="" />
-    {{ tasks }}
-  </div>
+    <div id="button-addTask">
+      <button @click="addTask" id="btn-ok">Ok</button>
+    </div>
+    <div class="tasks" v-for="(task, index) in tasks" :key="index">
+      {{ task }}
+    </div>
+  </section>
 </template>
 
 <script>
 import Header from "../components/Header";
 import TextArea from "../components/TextArea";
-import Task from "../components/Task";
-import { compile } from "vue";
 
 export default {
   name: "ToDo",
@@ -30,25 +32,15 @@ export default {
   components: {
     Header,
     TextArea,
-    Task,
   },
   methods: {
     addTask() {
-      // view model
-      // const vm = this;
+      // view model // const vm = this;
       const textarea = document.querySelector("textarea");
-      this.tasks.push(compile(<Task task={textarea.value} />));
-      console.log(this.tasks);
+      this.tasks.push(`${textarea.value}`);
     },
   },
 };
 </script>
 
-<style scoped>
-div {
-  width: 550px;
-  height: 600px;
-  overflow: scroll;
-  margin-top: -15px;
-}
-</style>
+<style scoped src="../styles/ToDo.css"></style>
