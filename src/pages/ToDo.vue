@@ -5,7 +5,7 @@
     rel="stylesheet"
   />
 
-  <section id="page-home" ref="pageHome">
+  <section id="page-home">
     <Header />
     <TextArea />
 
