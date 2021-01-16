@@ -5,7 +5,7 @@
     rel="stylesheet"
   />
   <div>
-    <textarea id="tarefaTextField"></textarea>
+    <textarea id="tarefaTextField" placeholder="Tarefa"></textarea>
   </div>
 </template>
 

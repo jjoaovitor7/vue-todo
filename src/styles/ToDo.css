@@ -17,14 +17,19 @@ section {
 div {
   background: #ffeb3b;
   display: flex;
-  height: 45px;
+  min-height: 45px;
   width: 500px;
   margin: 0 auto;
   font-family: "Times New Roman", "sans-serif";
   align-items: center;
   box-sizing: border-box;
   padding-left: 50px;
+  /* justify-content: space-between; */
 }
+
+/* input[type="checkbox"] {
+  margin-right: 25px;
+} */
 
 button {
   display: flex;

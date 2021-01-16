@@ -13,7 +13,7 @@
       <button @click="addTask" id="btn-ok">Ok</button>
     </div>
     <div class="tasks" v-for="(task, index) in tasks" :key="index">
-      {{ task }}
+      {{ task }} <!-- <input type="checkbox" /> -->
     </div>
   </section>
 </template>
@@ -36,9 +36,30 @@ export default {
   methods: {
     addTask() {
       // view model // const vm = this;
+
       const textarea = document.querySelector("textarea");
+
+      if (textarea.value === "") {
+        this.$toast.show("O campo de tarefa não pode ser vazio.", {
+          type: "error",
+          duration: 5000,
+        });
+        return 0;
+      }
+
+      if (textarea.value.length < 8) {
+        this.$toast.show(
+          "O campo de tarefa não pode ter menos que 8 caracteres",
+          {
+            type: "error",
+            duration: 5000,
+          }
+        );
+        return 0;
+      }
+
       this.tasks.push(`${textarea.value}`);
-      textarea.value = '';
+      textarea.value = "";
     },
   },
 };
