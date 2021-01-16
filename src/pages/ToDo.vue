@@ -38,6 +38,7 @@ export default {
       // view model // const vm = this;
       const textarea = document.querySelector("textarea");
       this.tasks.push(`${textarea.value}`);
+      textarea.value = '';
     },
   },
 };
